@@ -245,7 +245,7 @@ impl ResolverContract {
 
     // Helper method to get the default (Stellar) address for backwards compatibility
     pub fn get_stellar_address(env: Env, name: String) -> Option<String> {
-        resolve(env, name).and_then(|record| {
+        Self::resolve(env, name).and_then(|record| {
             record
                 .addresses
                 .get(String::from_str(&env, DEFAULT_CHAIN))
