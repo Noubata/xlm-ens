@@ -264,6 +264,13 @@ pub struct TextRecordUpdate {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
+pub struct TextRecordsUpdate {
+    pub name: String,
+    pub records: std::collections::HashMap<String, Option<String>>,
+    pub signer: Option<String>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct TransferRequest {
     pub name: String,
     pub new_owner: String,
@@ -420,6 +427,8 @@ impl fmt::Display for AuctionStatus {
 #[derive(Debug, Clone)]
 pub struct AuctionCreateRequest {
     pub name: String,
+    pub asset: String,
+    pub treasury: String,
     pub reserve_price: u64,
     pub duration_seconds: u64,
     pub signer: Option<String>,
