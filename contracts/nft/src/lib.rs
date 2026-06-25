@@ -1,3 +1,4 @@
+#![cfg_attr(not(test), no_std)]
 mod events;
 mod test;
 

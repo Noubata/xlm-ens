@@ -1,5 +1,8 @@
 use crate::constants::{MAX_NAME_LENGTH, MAX_SUBDOMAIN_DEPTH, MIN_NAME_LENGTH};
 use crate::types::Tld;
+use alloc::format;
+use alloc::string::{String, ToString};
+use alloc::vec::Vec;
 use core::fmt;
 
 /// Structured errors for offline name validation.
@@ -56,6 +59,7 @@ impl fmt::Display for NameValidationError {
     }
 }
 
+#[cfg(feature = "std")]
 impl std::error::Error for NameValidationError {}
 
 /// Parsed, validated name. Labels are ordered left-to-right (leaf first).
