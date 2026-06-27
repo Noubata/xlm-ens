@@ -81,6 +81,7 @@ pub struct ContractUpgraded {
 }
 
 #[contractevent]
+#[contracttype]
 pub struct AuctionCancelled {
     pub name: String,
     pub admin: Address,
